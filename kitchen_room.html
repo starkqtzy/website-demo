@@ -1,0 +1,849 @@
+<html lang="en">
+   <head>
+      <meta charset="utf-8" />
+      <meta content="width=device-width, initial-scale=1" name="viewport" />
+      <link rel="icon" type="image/png" href="images/logo_cl.png" />
+      <title>Carlos Lalyn Furniture | Kitchen Room</title>
+      <script src="https://cdn.tailwindcss.com"></script>
+      <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+      <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet" />
+      <style>
+       .font-pacifico {
+            font-family: "Pacifico", cursive;
+         }
+      </style>
+   </head>
+   <body class="bg-white text-black flex flex-col min-h-screen">
+    <div class="w-full shadow-xl bg-white">
+      <!-- Header -->
+        <header class="h-24 flex items-center justify-between max-w-7xl mx-auto px-6 w-full relative z-20">
+            <div class="flex items-center h-full">
+            <a href="index.html">
+                <img 
+                    alt="Coffee cup icon" 
+                    class="h-full w-auto object-contain" 
+                    src="images/logo_cl.png" 
+                />
+            </a>
+            </div>
+
+            <!-- Desktop Nav -->
+            <nav class="hidden lg:flex items-center space-x-8 text-black text-sm font-normal">
+            <a class="hover:underline font-medium text-base" href="index.html">HOME</a>
+            <a class="hover:underline font-medium text-base" href="#about">ABOUT</a>
+
+            <div class="relative">
+                <button aria-expanded="false" aria-haspopup="true" class="hover:underline focus:outline-none flex items-center space-x-1 font-medium text-base" id="menu-button" type="button">
+                <span>SHOP</span>
+                <svg class="w-4 h-4 text-gray-600" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 10.94l3.71-3.71a.75.75 0 111.06 1.06l-4.24 4.24a.75.75 0 01-1.06 0L5.21 8.27a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
+                </svg>
+                </button>
+                <div aria-labelledby="menu-button" class="absolute right-0 mt-2 w-64 bg-white border border-gray-300 rounded-md shadow-lg opacity-0 invisible transition-opacity z-10" id="menu-dropdown">
+                <ul class="py-2 text-sm text-black space-y-4 px-4">
+                    <li>
+                      <a href="living_room.html" class="flex items-center space-x-3 hover:bg-gray-100 rounded-md p-2 cursor-pointer">
+                        <img alt="Living Room" class="w-12 h-12 rounded" src="images/living.png" />
+                        <div>
+                          <p class="font-semibold">Living Room Area</p>
+                          <p class="text-xs text-gray-600">Cozy and stylish pieces for relaxing and entertaining.</p>
+                        </div>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="dining_room.html" class="flex items-center space-x-3 hover:bg-gray-100 rounded-md p-2 cursor-pointer">
+                        <img alt="Dining Room" class="w-12 h-12 rounded" src="images/dining.png" />
+                        <div>
+                          <p class="font-semibold">Dining Room Area</p>
+                          <p class="text-xs text-gray-600">Elegant furniture to elevate your dining experience.</p>
+                        </div>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="bedroom.html" class="flex items-center space-x-3 hover:bg-gray-100 rounded-md p-2 cursor-pointer">
+                        <img alt="Bedroom" class="w-12 h-12 rounded" src="images/bedroom.png" />
+                        <div>
+                          <p class="font-semibold">Bedroom Area</p>
+                          <p class="text-xs text-gray-600">Comfort and tranquility for your personal sanctuary.</p>
+                        </div>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="comfort_room.html" class="flex items-center space-x-3 hover:bg-gray-100 rounded-md p-2 cursor-pointer">
+                        <img alt="Comfort Room" class="w-12 h-12 rounded" src="images/comfort_room.png" />
+                        <div>
+                          <p class="font-semibold">Comfort Room Area</p>
+                          <p class="text-xs text-gray-600">Clean, functional, and stylish bathroom essentials.</p>
+                        </div>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="kitchen_room.html" class="flex items-center space-x-3 hover:bg-gray-100 rounded-md p-2 cursor-pointer">
+                        <img alt="Kitchen Room" class="w-12 h-12 rounded" src="images/kitchen.png" />
+                        <div>
+                          <p class="font-semibold">Kitchen Room Area</p>
+                          <p class="text-xs text-gray-600">Smart and modern solutions for everyday cooking.</p>
+                        </div>
+                      </a>
+                    </li>
+                </ul>
+                </div>
+            </div>
+            </nav>
+
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-button" class="lg:hidden focus:outline-none">
+            <svg class="w-6 h-6 text-black" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
+            </svg>
+            </button>
+        </header>
+
+        <!-- Mobile Menu Overlay -->
+        <div id="mobile-menu" class="fixed top-0 left-0 w-full h-full bg-white z-50 transform -translate-x-full transition-transform duration-300 ease-in-out lg:hidden shadow-lg">
+        <div class="flex justify-between items-center p-6 border-b border-gray-300">
+            <img src="images/logo_cl.png" class="h-10" alt="Logo">
+            <button id="mobile-menu-close" class="focus:outline-none">
+            <svg class="w-6 h-6 text-black" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
+            </svg>
+            </button>
+        </div>
+        <nav class="flex flex-col space-y-4 p-6 text-black text-lg">
+            <a href="index.html">Home</a>
+            <a href="#about">About</a>
+
+         <!-- Mobile Shop Dropdown -->
+        <div>
+            <button id="mobile-shop-toggle" class="flex justify-between items-center w-full font-semibold focus:outline-none">
+                <span>Shop</span>
+                <svg id="mobile-shop-icon" class="w-5 h-5 transform transition-transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                </svg>
+            </button>
+            <div id="mobile-shop-dropdown" class="ml-4 mt-3 hidden space-y-4 text-base">
+                <ul class="py-2 text-sm text-black space-y-4 px-4">
+                    <li>
+                      <a href="living_room.html" class="flex items-center space-x-3 hover:bg-gray-100 rounded-md p-2 cursor-pointer">
+                        <img alt="Living Room" class="w-12 h-12 rounded" src="images/living.png" />
+                        <div>
+                          <p class="font-semibold">Living Room Area</p>
+                          <p class="text-xs text-gray-600">Cozy and stylish pieces for relaxing and entertaining.</p>
+                        </div>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="dining_room.html" class="flex items-center space-x-3 hover:bg-gray-100 rounded-md p-2 cursor-pointer">
+                        <img alt="Dining Room" class="w-12 h-12 rounded" src="images/dining.png" />
+                        <div>
+                          <p class="font-semibold">Dining Room Area</p>
+                          <p class="text-xs text-gray-600">Elegant furniture to elevate your dining experience.</p>
+                        </div>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="bedroom.html" class="flex items-center space-x-3 hover:bg-gray-100 rounded-md p-2 cursor-pointer">
+                        <img alt="Bedroom" class="w-12 h-12 rounded" src="images/bedroom.png" />
+                        <div>
+                          <p class="font-semibold">Bedroom Area</p>
+                          <p class="text-xs text-gray-600">Comfort and tranquility for your personal sanctuary.</p>
+                        </div>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="comfort_room.html" class="flex items-center space-x-3 hover:bg-gray-100 rounded-md p-2 cursor-pointer">
+                        <img alt="Comfort Room" class="w-12 h-12 rounded" src="images/comfort_room.png" />
+                        <div>
+                          <p class="font-semibold">Comfort Room Area</p>
+                          <p class="text-xs text-gray-600">Clean, functional, and stylish bathroom essentials.</p>
+                        </div>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="kitchen_room.html" class="flex items-center space-x-3 hover:bg-gray-100 rounded-md p-2 cursor-pointer">
+                        <img alt="Kitchen Room" class="w-12 h-12 rounded" src="images/kitchen.png" />
+                        <div>
+                          <p class="font-semibold">Kitchen Room Area</p>
+                          <p class="text-xs text-gray-600">Smart and modern solutions for everyday cooking.</p>
+                        </div>
+                      </a>
+                    </li>
+                </ul>
+            </div>
+            </div>
+        </nav>
+        </div>
+    </div>
+  
+    <!-- Breadcrumb with Mobile Toggle -->
+    <div>
+        <div class="px-6 py-4 border-b border-gray-300 text-black text-sm font-normal font-sans">
+
+        <!-- Mobile Toggle Button -->
+        <div class="flex justify-between items-center lg:hidden">
+            <span class="font-semibold"></span>
+            <button id="breadcrumb-toggle" class="text-sm text-white bg-[#895129] px-3 py-1 rounded focus:outline-none">
+            Show Areas
+            </button>
+        </div>
+
+        <!-- Breadcrumb Links -->
+        <div id="breadcrumb-links" class="mt-2 hidden flex-wrap gap-x-2 gap-y-1 lg:flex lg:mt-0">
+            <span>Shop /</span>
+
+            <a href="living_room.html" class="font-semibold text-black hover:underline">Living Room Area</a>
+            <span>/</span>
+
+            <a href="bedroom.html" class="font-semibold text-black hover:underline">Bedroom Area</a>
+            <span>/</span>
+
+            <a href="comfort_room.html" class="font-semibold text-black hover:underline">Comfort Room Area</a>
+            <span>/</span>
+
+            <a href="dining_room.html" class="font-semibold text-black hover:underline">Dining Room Area</a>
+            <span>/</span>
+
+            <a href="kitchen_room.html" class="font-semibold text-black hover:underline">Kitchen Room Area</a>
+        </div>
+    </div>
+
+
+    <div class="bg-[#895129] flex flex-col md:flex-row items-center justify-center gap-10 py-20 px-6 md:px-20">
+        <img 
+            alt="Glass cup filled with black coffee with a handle on the right side, casting a shadow on a black background" 
+            class="w-48 h-auto" 
+            height="250" 
+            src="images/kitchen.png" 
+            width="200" 
+        />
+        <div class="text-white max-w-lg text-center md:text-left">
+            <h1 class="font-bold text-3xl md:text-4xl mb-4 font-montserrat">
+                Kitchen Room Area
+            </h1>
+            <p class="text-lg text-gray-300 font-sans">
+                <span class="text-gray-400 font-semibold">
+                    Carlos Lalyn
+                </span>
+                Furniture
+                <sup class="text-gray-400 text-xs ml-1 cursor-pointer">
+                    <i class="fas fa-info-circle"></i>
+                </sup>
+            </p>
+        </div>
+    </div>
+
+    <div class="p-6" style="padding-top: 100px; padding-bottom: 150px;">
+        <main class="max-w-7xl mx-auto">
+        <!-- Row 1 -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 mb-6">
+            
+            <!-- Card 1 -->
+            <section class="bg-white shadow-[0_0_35px_rgba(0,0,0,0.25)] rounded-xl p-4 flex flex-col items-center h-full">
+                <!-- Product Image -->
+                <div class="bg-gray-300 p-4 rounded-md mb-10">
+                    <img 
+                        alt="Classic black coffee cup on a bed of coffee beans, top view" 
+                        class="w-36 h-36 object-cover rounded product-img" 
+                        src="images/wall_decor.jpg" 
+                        width="150" 
+                        height="150"
+                    />
+                </div>
+
+                <!-- Bottom Details Group -->
+                <div class="w-full flex flex-col items-start">
+                    <!-- Product Name -->
+                    <h3 class="font-semibold text-lg text-black mb-1">Kitchen Wall Decor</h3>
+                    <!-- Product Price -->
+                    <p class="text-black font-bold text-lg mb-6">₱400</p>
+                    <!-- Wood Type -->
+                    <div class="w-full mb-5">
+                        <label class="block text-sm font-semibold text-black mb-1">Wood Type</label>
+                        <select class="w-full rounded border border-gray-300 text-sm px-2 py-1">
+                            <option>Tugas Tree (Molave Tree)</option>
+                            <option>Mahogany Tree</option>
+                            <option>Narra Tree</option>
+                            <option>Gmelina Tree</option>
+                        </select>
+                    </div>
+                    <!-- Color Type -->
+                    <div class="w-full mb-6">
+                        <label class="block text-sm font-semibold text-black mb-1">Color Type</label>
+                        <div class="flex gap-4">
+                            <label class="flex items-center space-x-2 cursor-pointer">
+                                <input type="radio" name="color-type-1" value="Cream" class="hidden peer" checked />
+                                <div class="w-6 h-6 rounded-full bg-[#f5deb3] border-2 border-gray-300 peer-checked:ring-2 peer-checked:ring-black"></div>
+                                <span class="text-sm text-black">Cream</span>
+                            </label>
+                            <label class="flex items-center space-x-2 cursor-pointer">
+                                <input type="radio" name="color-type-1" value="Dark Brown" class="hidden peer" />
+                                <div class="w-6 h-6 rounded-full bg-[#5C4033] border-2 border-gray-300 peer-checked:ring-2 peer-checked:ring-black"></div>
+                                <span class="text-sm text-black">Dark Brown</span>
+                            </label>
+                        </div>
+                    </div>
+                    <!-- Spacer -->
+                    <div class="flex-grow"></div>
+                    <!-- View Image Button -->
+                    <button 
+                        class="bg-[#895129] text-white font-bold text-sm w-full py-2 rounded mt-auto" 
+                        type="button"
+                        onclick="openImageModal(this)">
+                        View Image
+                    </button>
+                </div>
+            </section>
+
+            <!-- Card 2 -->
+             <section class="bg-white shadow-[0_0_35px_rgba(0,0,0,0.25)] rounded-xl p-4 flex flex-col items-center h-full">
+                <!-- Product Image -->
+                <div class="bg-gray-300 p-4 rounded-md mb-10">
+                    <img 
+                        alt="Classic black coffee cup on a bed of coffee beans, top view" 
+                        class="w-36 h-36 object-cover rounded product-img" 
+                        src="images/wall_decor.jpg" 
+                        width="150" 
+                        height="150"
+                    />
+                </div>
+
+                <!-- Bottom Details Group -->
+                <div class="w-full flex flex-col items-start">
+                    <!-- Product Name -->
+                    <h3 class="font-semibold text-lg text-black mb-1">Kitchen Wall Decor</h3>
+                    <!-- Product Price -->
+                    <p class="text-black font-bold text-lg mb-6">₱400</p>
+                    <!-- Wood Type -->
+                    <div class="w-full mb-5">
+                        <label class="block text-sm font-semibold text-black mb-1">Wood Type</label>
+                        <select class="w-full rounded border border-gray-300 text-sm px-2 py-1">
+                            <option>Tugas Tree (Molave Tree)</option>
+                            <option>Mahogany Tree</option>
+                            <option>Narra Tree</option>
+                            <option>Gmelina Tree</option>
+                        </select>
+                    </div>
+                    <!-- Color Type -->
+                    <div class="w-full mb-6">
+                        <label class="block text-sm font-semibold text-black mb-1">Color Type</label>
+                        <div class="flex gap-4">
+                            <label class="flex items-center space-x-2 cursor-pointer">
+                                <input type="radio" name="color-type-1" value="Cream" class="hidden peer" checked />
+                                <div class="w-6 h-6 rounded-full bg-[#f5deb3] border-2 border-gray-300 peer-checked:ring-2 peer-checked:ring-black"></div>
+                                <span class="text-sm text-black">Cream</span>
+                            </label>
+                            <label class="flex items-center space-x-2 cursor-pointer">
+                                <input type="radio" name="color-type-1" value="Dark Brown" class="hidden peer" />
+                                <div class="w-6 h-6 rounded-full bg-[#5C4033] border-2 border-gray-300 peer-checked:ring-2 peer-checked:ring-black"></div>
+                                <span class="text-sm text-black">Dark Brown</span>
+                            </label>
+                        </div>
+                    </div>
+                    <!-- Spacer -->
+                    <div class="flex-grow"></div>
+                    <!-- View Image Button -->
+                    <button 
+                        class="bg-[#895129] text-white font-bold text-sm w-full py-2 rounded mt-auto" 
+                        type="button"
+                        onclick="openImageModal(this)">
+                        View Image
+                    </button>
+                </div>
+            </section>
+
+            <!-- Card 3 -->
+            <section class="bg-white shadow-[0_0_35px_rgba(0,0,0,0.25)] rounded-xl p-4 flex flex-col items-center h-full">
+                <!-- Product Image -->
+                <div class="bg-gray-300 p-4 rounded-md mb-10">
+                    <img 
+                        alt="Classic black coffee cup on a bed of coffee beans, top view" 
+                        class="w-36 h-36 object-cover rounded product-img" 
+                        src="images/wall_decor.jpg" 
+                        width="150" 
+                        height="150"
+                    />
+                </div>
+
+                <!-- Bottom Details Group -->
+                <div class="w-full flex flex-col items-start">
+                    <!-- Product Name -->
+                    <h3 class="font-semibold text-lg text-black mb-1">Kitchen Wall Decor</h3>
+                    <!-- Product Price -->
+                    <p class="text-black font-bold text-lg mb-6">₱400</p>
+                    <!-- Wood Type -->
+                    <div class="w-full mb-5">
+                        <label class="block text-sm font-semibold text-black mb-1">Wood Type</label>
+                        <select class="w-full rounded border border-gray-300 text-sm px-2 py-1">
+                            <option>Tugas Tree (Molave Tree)</option>
+                            <option>Mahogany Tree</option>
+                            <option>Narra Tree</option>
+                            <option>Gmelina Tree</option>
+                        </select>
+                    </div>
+                    <!-- Color Type -->
+                    <div class="w-full mb-6">
+                        <label class="block text-sm font-semibold text-black mb-1">Color Type</label>
+                        <div class="flex gap-4">
+                            <label class="flex items-center space-x-2 cursor-pointer">
+                                <input type="radio" name="color-type-1" value="Cream" class="hidden peer" checked />
+                                <div class="w-6 h-6 rounded-full bg-[#f5deb3] border-2 border-gray-300 peer-checked:ring-2 peer-checked:ring-black"></div>
+                                <span class="text-sm text-black">Cream</span>
+                            </label>
+                            <label class="flex items-center space-x-2 cursor-pointer">
+                                <input type="radio" name="color-type-1" value="Dark Brown" class="hidden peer" />
+                                <div class="w-6 h-6 rounded-full bg-[#5C4033] border-2 border-gray-300 peer-checked:ring-2 peer-checked:ring-black"></div>
+                                <span class="text-sm text-black">Dark Brown</span>
+                            </label>
+                        </div>
+                    </div>
+                    <!-- Spacer -->
+                    <div class="flex-grow"></div>
+                    <!-- View Image Button -->
+                    <button 
+                        class="bg-[#895129] text-white font-bold text-sm w-full py-2 rounded mt-auto" 
+                        type="button"
+                        onclick="openImageModal(this)">
+                        View Image
+                    </button>
+                </div>
+            </section>
+
+            <!-- Card 4 -->
+             <section class="bg-white shadow-[0_0_35px_rgba(0,0,0,0.25)] rounded-xl p-4 flex flex-col items-center h-full">
+                <!-- Product Image -->
+                <div class="bg-gray-300 p-4 rounded-md mb-10">
+                    <img 
+                        alt="Classic black coffee cup on a bed of coffee beans, top view" 
+                        class="w-36 h-36 object-cover rounded product-img" 
+                        src="images/wall_decor.jpg" 
+                        width="150" 
+                        height="150"
+                    />
+                </div>
+
+                <!-- Bottom Details Group -->
+                <div class="w-full flex flex-col items-start">
+                    <!-- Product Name -->
+                    <h3 class="font-semibold text-lg text-black mb-1">Kitchen Wall Decor</h3>
+                    <!-- Product Price -->
+                    <p class="text-black font-bold text-lg mb-6">₱400</p>
+                    <!-- Wood Type -->
+                    <div class="w-full mb-5">
+                        <label class="block text-sm font-semibold text-black mb-1">Wood Type</label>
+                        <select class="w-full rounded border border-gray-300 text-sm px-2 py-1">
+                            <option>Tugas Tree (Molave Tree)</option>
+                            <option>Mahogany Tree</option>
+                            <option>Narra Tree</option>
+                            <option>Gmelina Tree</option>
+                        </select>
+                    </div>
+                    <!-- Color Type -->
+                    <div class="w-full mb-6">
+                        <label class="block text-sm font-semibold text-black mb-1">Color Type</label>
+                        <div class="flex gap-4">
+                            <label class="flex items-center space-x-2 cursor-pointer">
+                                <input type="radio" name="color-type-1" value="Cream" class="hidden peer" checked />
+                                <div class="w-6 h-6 rounded-full bg-[#f5deb3] border-2 border-gray-300 peer-checked:ring-2 peer-checked:ring-black"></div>
+                                <span class="text-sm text-black">Cream</span>
+                            </label>
+                            <label class="flex items-center space-x-2 cursor-pointer">
+                                <input type="radio" name="color-type-1" value="Dark Brown" class="hidden peer" />
+                                <div class="w-6 h-6 rounded-full bg-[#5C4033] border-2 border-gray-300 peer-checked:ring-2 peer-checked:ring-black"></div>
+                                <span class="text-sm text-black">Dark Brown</span>
+                            </label>
+                        </div>
+                    </div>
+                    <!-- Spacer -->
+                    <div class="flex-grow"></div>
+                    <!-- View Image Button -->
+                    <button 
+                        class="bg-[#895129] text-white font-bold text-sm w-full py-2 rounded mt-auto" 
+                        type="button"
+                        onclick="openImageModal(this)">
+                        View Image
+                    </button>
+                </div>
+            </section>
+        </div>
+
+        <!-- Row 2 -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+            <!-- Card 5 -->
+             <section class="bg-white shadow-[0_0_35px_rgba(0,0,0,0.25)] rounded-xl p-4 flex flex-col items-center h-full">
+                <!-- Product Image -->
+                <div class="bg-gray-300 p-4 rounded-md mb-10">
+                    <img 
+                        alt="Classic black coffee cup on a bed of coffee beans, top view" 
+                        class="w-36 h-36 object-cover rounded product-img" 
+                        src="images/almires.jpg" 
+                        width="150" 
+                        height="150"
+                    />
+                </div>
+
+                <!-- Bottom Details Group -->
+                <div class="w-full flex flex-col items-start">
+                    <!-- Product Name -->
+                    <h3 class="font-semibold text-lg text-black mb-1">Almires</h3>
+                    <!-- Product Price -->
+                    <p class="text-black font-bold text-lg mb-6">₱200</p>
+                    <!-- Wood Type -->
+                    <div class="w-full mb-5">
+                        <label class="block text-sm font-semibold text-black mb-1">Wood Type</label>
+                        <select class="w-full rounded border border-gray-300 text-sm px-2 py-1">
+                            <option>Tugas Tree (Molave Tree)</option>
+                            <option>Mahogany Tree</option>
+                            <option>Narra Tree</option>
+                            <option>Gmelina Tree</option>
+                        </select>
+                    </div>
+                    <!-- Color Type -->
+                    <div class="w-full mb-6">
+                        <label class="block text-sm font-semibold text-black mb-1">Color Type</label>
+                        <div class="flex gap-4">
+                            <label class="flex items-center space-x-2 cursor-pointer">
+                                <input type="radio" name="color-type-1" value="Cream" class="hidden peer" checked />
+                                <div class="w-6 h-6 rounded-full bg-[#f5deb3] border-2 border-gray-300 peer-checked:ring-2 peer-checked:ring-black"></div>
+                                <span class="text-sm text-black">Cream</span>
+                            </label>
+                            <label class="flex items-center space-x-2 cursor-pointer">
+                                <input type="radio" name="color-type-1" value="Dark Brown" class="hidden peer" />
+                                <div class="w-6 h-6 rounded-full bg-[#5C4033] border-2 border-gray-300 peer-checked:ring-2 peer-checked:ring-black"></div>
+                                <span class="text-sm text-black">Dark Brown</span>
+                            </label>
+                        </div>
+                    </div>
+                    <!-- Spacer -->
+                    <div class="flex-grow"></div>
+                    <!-- View Image Button -->
+                    <button 
+                        class="bg-[#895129] text-white font-bold text-sm w-full py-2 rounded mt-auto" 
+                        type="button"
+                        onclick="openImageModal(this)">
+                        View Image
+                    </button>
+                </div>
+            </section>
+
+            <!-- Card 6 -->
+            <section class="bg-white shadow-[0_0_35px_rgba(0,0,0,0.25)] rounded-xl p-4 flex flex-col items-center h-full">
+                <!-- Product Image -->
+                <div class="bg-gray-300 p-4 rounded-md mb-10">
+                    <img 
+                        alt="Classic black coffee cup on a bed of coffee beans, top view" 
+                        class="w-36 h-36 object-cover rounded product-img" 
+                        src="images/almires.jpg" 
+                        width="150" 
+                        height="150"
+                    />
+                </div>
+
+                <!-- Bottom Details Group -->
+                <div class="w-full flex flex-col items-start">
+                    <!-- Product Name -->
+                    <h3 class="font-semibold text-lg text-black mb-1">Almires</h3>
+                    <!-- Product Price -->
+                    <p class="text-black font-bold text-lg mb-6">₱200</p>
+                    <!-- Wood Type -->
+                    <div class="w-full mb-5">
+                        <label class="block text-sm font-semibold text-black mb-1">Wood Type</label>
+                        <select class="w-full rounded border border-gray-300 text-sm px-2 py-1">
+                            <option>Tugas Tree (Molave Tree)</option>
+                            <option>Mahogany Tree</option>
+                            <option>Narra Tree</option>
+                            <option>Gmelina Tree</option>
+                        </select>
+                    </div>
+                    <!-- Color Type -->
+                    <div class="w-full mb-6">
+                        <label class="block text-sm font-semibold text-black mb-1">Color Type</label>
+                        <div class="flex gap-4">
+                            <label class="flex items-center space-x-2 cursor-pointer">
+                                <input type="radio" name="color-type-1" value="Cream" class="hidden peer" checked />
+                                <div class="w-6 h-6 rounded-full bg-[#f5deb3] border-2 border-gray-300 peer-checked:ring-2 peer-checked:ring-black"></div>
+                                <span class="text-sm text-black">Cream</span>
+                            </label>
+                            <label class="flex items-center space-x-2 cursor-pointer">
+                                <input type="radio" name="color-type-1" value="Dark Brown" class="hidden peer" />
+                                <div class="w-6 h-6 rounded-full bg-[#5C4033] border-2 border-gray-300 peer-checked:ring-2 peer-checked:ring-black"></div>
+                                <span class="text-sm text-black">Dark Brown</span>
+                            </label>
+                        </div>
+                    </div>
+                    <!-- Spacer -->
+                    <div class="flex-grow"></div>
+                    <!-- View Image Button -->
+                    <button 
+                        class="bg-[#895129] text-white font-bold text-sm w-full py-2 rounded mt-auto" 
+                        type="button"
+                        onclick="openImageModal(this)">
+                        View Image
+                    </button>
+                </div>
+            </section>
+
+            <!-- Card 7 -->
+            <section class="bg-white shadow-[0_0_35px_rgba(0,0,0,0.25)] rounded-xl p-4 flex flex-col items-center h-full">
+                <!-- Product Image -->
+                <div class="bg-gray-300 p-4 rounded-md mb-10">
+                    <img 
+                        alt="Classic black coffee cup on a bed of coffee beans, top view" 
+                        class="w-36 h-36 object-cover rounded product-img" 
+                        src="images/almires.jpg" 
+                        width="150" 
+                        height="150"
+                    />
+                </div>
+
+                <!-- Bottom Details Group -->
+                <div class="w-full flex flex-col items-start">
+                    <!-- Product Name -->
+                    <h3 class="font-semibold text-lg text-black mb-1">Almires</h3>
+                    <!-- Product Price -->
+                    <p class="text-black font-bold text-lg mb-6">₱200</p>
+                    <!-- Wood Type -->
+                    <div class="w-full mb-5">
+                        <label class="block text-sm font-semibold text-black mb-1">Wood Type</label>
+                        <select class="w-full rounded border border-gray-300 text-sm px-2 py-1">
+                            <option>Tugas Tree (Molave Tree)</option>
+                            <option>Mahogany Tree</option>
+                            <option>Narra Tree</option>
+                            <option>Gmelina Tree</option>
+                        </select>
+                    </div>
+                    <!-- Color Type -->
+                    <div class="w-full mb-6">
+                        <label class="block text-sm font-semibold text-black mb-1">Color Type</label>
+                        <div class="flex gap-4">
+                            <label class="flex items-center space-x-2 cursor-pointer">
+                                <input type="radio" name="color-type-1" value="Cream" class="hidden peer" checked />
+                                <div class="w-6 h-6 rounded-full bg-[#f5deb3] border-2 border-gray-300 peer-checked:ring-2 peer-checked:ring-black"></div>
+                                <span class="text-sm text-black">Cream</span>
+                            </label>
+                            <label class="flex items-center space-x-2 cursor-pointer">
+                                <input type="radio" name="color-type-1" value="Dark Brown" class="hidden peer" />
+                                <div class="w-6 h-6 rounded-full bg-[#5C4033] border-2 border-gray-300 peer-checked:ring-2 peer-checked:ring-black"></div>
+                                <span class="text-sm text-black">Dark Brown</span>
+                            </label>
+                        </div>
+                    </div>
+                    <!-- Spacer -->
+                    <div class="flex-grow"></div>
+                    <!-- View Image Button -->
+                    <button 
+                        class="bg-[#895129] text-white font-bold text-sm w-full py-2 rounded mt-auto" 
+                        type="button"
+                        onclick="openImageModal(this)">
+                        View Image
+                    </button>
+                </div>
+            </section>
+
+            <!-- Card 8 -->
+           <section class="bg-white shadow-[0_0_35px_rgba(0,0,0,0.25)] rounded-xl p-4 flex flex-col items-center h-full">
+                <!-- Product Image -->
+                <div class="bg-gray-300 p-4 rounded-md mb-10">
+                    <img 
+                        alt="Classic black coffee cup on a bed of coffee beans, top view" 
+                        class="w-36 h-36 object-cover rounded product-img" 
+                        src="images/almires.jpg" 
+                        width="150" 
+                        height="150"
+                    />
+                </div>
+
+                <!-- Bottom Details Group -->
+                <div class="w-full flex flex-col items-start">
+                    <!-- Product Name -->
+                    <h3 class="font-semibold text-lg text-black mb-1">Almires</h3>
+                    <!-- Product Price -->
+                    <p class="text-black font-bold text-lg mb-6">₱200</p>
+                    <!-- Wood Type -->
+                    <div class="w-full mb-5">
+                        <label class="block text-sm font-semibold text-black mb-1">Wood Type</label>
+                        <select class="w-full rounded border border-gray-300 text-sm px-2 py-1">
+                            <option>Tugas Tree (Molave Tree)</option>
+                            <option>Mahogany Tree</option>
+                            <option>Narra Tree</option>
+                            <option>Gmelina Tree</option>
+                        </select>
+                    </div>
+                    <!-- Color Type -->
+                    <div class="w-full mb-6">
+                        <label class="block text-sm font-semibold text-black mb-1">Color Type</label>
+                        <div class="flex gap-4">
+                            <label class="flex items-center space-x-2 cursor-pointer">
+                                <input type="radio" name="color-type-1" value="Cream" class="hidden peer" checked />
+                                <div class="w-6 h-6 rounded-full bg-[#f5deb3] border-2 border-gray-300 peer-checked:ring-2 peer-checked:ring-black"></div>
+                                <span class="text-sm text-black">Cream</span>
+                            </label>
+                            <label class="flex items-center space-x-2 cursor-pointer">
+                                <input type="radio" name="color-type-1" value="Dark Brown" class="hidden peer" />
+                                <div class="w-6 h-6 rounded-full bg-[#5C4033] border-2 border-gray-300 peer-checked:ring-2 peer-checked:ring-black"></div>
+                                <span class="text-sm text-black">Dark Brown</span>
+                            </label>
+                        </div>
+                    </div>
+                    <!-- Spacer -->
+                    <div class="flex-grow"></div>
+                    <!-- View Image Button -->
+                    <button 
+                        class="bg-[#895129] text-white font-bold text-sm w-full py-2 rounded mt-auto" 
+                        type="button"
+                        onclick="openImageModal(this)">
+                        View Image
+                    </button>
+                </div>
+            </section>
+
+            <!-- Modal Overlay -->
+            <div id="image-modal" class="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50 hidden">
+                <div class="relative max-w-[90%] max-h-[90%]">
+                    <img id="modal-image" src="" alt="Full Image" class="rounded shadow-lg max-h-[90vh] object-contain" />
+                    <button onclick="closeImageModal()" class="absolute top-2 right-2 bg-white text-black rounded-full px-3 py-1 text-sm font-semibold shadow">
+                        Close ✕
+                    </button>
+                </div>
+            </div>
+        </div>
+        </main>
+    </div>
+    <footer class="bg-gray-100 text-black" style="padding-bottom: 10px;">
+        <div class="max-w-5xl mx-auto px-6 py-12 flex flex-col md:flex-row justify-between">
+            <div class="space-y-6 md:w-1/2">
+              <div class="flex items-center space-x-4 mb-6">
+                  <img alt="Logo of a coffee cup representing Coffee City" class="w-10 h-10" height="40" src="images/logo_cl.png" width="40"/>
+                  <span class="text-2xl font-bold">
+                    Carlos Lalyn Furniture
+                  </span>
+              </div>
+              <div class="flex items-center space-x-4">
+                  <div class="bg-[#895129] rounded-full p-3 flex items-center justify-center w-10 h-10">
+                    <i class="fas fa-map-marker-alt text-gray-200 text-lg"></i>
+                  </div>
+                  <div>
+                    <p class="text-sm">Juan Luna St. Brgy. Bagongbayan</p>
+                    <p class="font-semibold text-black text-base">Bato, Leyte</p>
+                  </div>
+              </div>
+              <div class="flex items-center space-x-4">
+                  <div class="bg-[#895129] rounded-full p-3 flex items-center justify-center w-10 h-10">
+                    <i class="fas fa-phone-alt text-gray-200 text-lg"></i>
+                  </div>
+                  <div>
+                    <p class="font-semibold text-black text-base">+639631157772</p>
+                  </div>
+              </div>
+              <div class="flex items-center space-x-4">
+                  <div class="bg-[#895129] rounded-full p-3 flex items-center justify-center w-10 h-10">
+                    <i class="fas fa-envelope text-gray-200 text-lg"></i>
+                  </div>
+                  <div>
+                    <p class="font-semibold text-black text-base">clf@gmail.com</p>
+                  </div>
+              </div>
+            </div>
+            <div class="md:w-1/2 mt-10 md:mt-0">
+              <p class="font-semibold text-black mb-4">You can also contact us to:</p>
+              <div class="flex space-x-3 mt-6">
+                  <a 
+                    href="https://www.facebook.com/lalyn.cortez.96/about" 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    class="bg-white p-3 rounded shadow flex items-center justify-center w-10 h-10">
+                    <i class="fab fa-facebook-f text-[#1877F2] text-lg"></i>
+                  </a>
+
+                  <a href="#" class="bg-white p-3 rounded shadow flex items-center justify-center w-10 h-10">
+                    <i class="fab fa-instagram text-[#E4405F] text-lg"></i>
+                  </a>
+                  <a href="#" class="bg-white p-3 rounded shadow flex items-center justify-center w-10 h-10">
+                    <i class="fab fa-tiktok text-black text-lg"></i>
+                  </a>
+              </div>
+            </div>
+        </div>
+        <hr class="border-gray-400 max-w-5xl mx-auto"/>
+        <div class="max-w-5xl mx-auto px-6 py-4 text-center text-gray-700 text-sm" style="margin-top: 10px; margin-bottom: 40px;  ">
+            © 2025 Carlos Lalyn Furniture. All Rights Reserved.
+        </div>
+      </footer>
+   </body>
+    <script>
+        // ===== Desktop Dropdown Menu =====
+        const menuButton = document.getElementById('menu-button');
+        const menuDropdown = document.getElementById('menu-dropdown');
+
+        menuButton.addEventListener('click', () => {
+            const isVisible = menuDropdown.classList.contains('opacity-100');
+            if (isVisible) {
+            menuDropdown.classList.remove('opacity-100');
+            menuDropdown.classList.add('opacity-0', 'invisible');
+            menuButton.setAttribute('aria-expanded', 'false');
+            } else {
+            menuDropdown.classList.add('opacity-100');
+            menuDropdown.classList.remove('opacity-0', 'invisible');
+            menuButton.setAttribute('aria-expanded', 'true');
+            }
+        });
+
+        document.addEventListener('click', (event) => {
+            if (!menuButton.contains(event.target) && !menuDropdown.contains(event.target)) {
+            menuDropdown.classList.remove('opacity-100');
+            menuDropdown.classList.add('opacity-0', 'invisible');
+            menuButton.setAttribute('aria-expanded', 'false');
+            }
+        });
+
+        // ===== Mobile Menu =====
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenuClose = document.getElementById('mobile-menu-close');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.remove('-translate-x-full');
+        });
+
+        mobileMenuClose.addEventListener('click', () => {
+            mobileMenu.classList.add('-translate-x-full');
+        });
+
+        document.addEventListener('click', (e) => {
+            if (!mobileMenu.contains(e.target) && !mobileMenuButton.contains(e.target)) {
+            mobileMenu.classList.add('-translate-x-full');
+            }
+        });
+
+        // ===== Mobile Shop Dropdown =====
+        const mobileShopToggle = document.getElementById('mobile-shop-toggle');
+        const mobileShopDropdown = document.getElementById('mobile-shop-dropdown');
+        const mobileShopIcon = document.getElementById('mobile-shop-icon');
+
+        mobileShopToggle.addEventListener('click', () => {
+            const isHidden = mobileShopDropdown.classList.contains('hidden');
+            mobileShopDropdown.classList.toggle('hidden', !isHidden);
+            mobileShopIcon.classList.toggle('rotate-180', isHidden);
+        });
+
+        const toggleBtn = document.getElementById('breadcrumb-toggle');
+        const breadcrumbLinks = document.getElementById('breadcrumb-links');
+
+        toggleBtn.addEventListener('click', () => {
+            const isVisible = !breadcrumbLinks.classList.contains('hidden');
+            breadcrumbLinks.classList.toggle('hidden');
+            toggleBtn.textContent = isVisible ? 'Show Areas' : 'Hide';
+        });
+
+        function openImageModal(button) {
+        const card = button.closest('section');
+        const img = card.querySelector('img.product-img');
+        const imgSrc = img.getAttribute('src');
+        document.getElementById('modal-image').src = imgSrc;
+        document.getElementById('image-modal').classList.remove('hidden');
+        }
+
+        function closeImageModal() {
+            document.getElementById('image-modal').classList.add('hidden');
+        }
+    </script>   
+</html>
